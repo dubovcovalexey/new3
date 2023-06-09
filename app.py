@@ -30,7 +30,7 @@ def set_png_as_page_bg(png_file):
 set_png_as_page_bg('6.JPG')
 
 
-classifier_name=['XGBoost']
+classifier_name=['Сatboost']
 option = st.sidebar.selectbox('Модель прогнозирования оттока клиентов', classifier_name)
 st.subheader(option)
 
