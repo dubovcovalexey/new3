@@ -41,13 +41,9 @@ model=pickle.load(open("model_saved","rb"))
 
 def predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]])
-    prediction = model.predict_proba(input)[:, 1] * 100
-    return float(prediction)
-  
-
-    #prediction = model.predict_proba(input)
-    #pred = '{0:.{1}f}'.format(prediction[0][0], 2)
-    #return float(pred)
+    prediction = model.predict_proba(input)
+    pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+    return float(pred)
 
 
 def main():
