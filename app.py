@@ -39,9 +39,10 @@ model=pickle.load(open("model_saved","rb"))
 
 def predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]])
-    prediction = model.predict_proba(input)
-    pred = '{0:.{1}f}'.format(prediction[:, 1] * 100)
-    return float(pred)
+    prediction = model.predict_proba(input)[:, 1] * 100
+    return float(prediction)      
+    #pred = '{0:.{1}f}'.format(prediction[:, 1] * 100)
+  #return float(pred)
 
 
 def main():
@@ -89,10 +90,11 @@ def main():
 
         if output >= 0.5:
             st.markdown(churn_html, unsafe_allow_html= True)
-            st.balloons()
 
         else:
             st.markdown(no_churn_html, unsafe_allow_html= True)
+            st.balloons()
+
 
 if __name__=='__main__':
     main()
