@@ -1,5 +1,5 @@
 import sklearn
-from sklearn.ensemble import GradientBoostingClassifier
+#from sklearn.ensemble import GradientBoostingClassifier
 import streamlit as st
 import pickle
 import numpy as np
@@ -39,7 +39,8 @@ model=pickle.load(open("model_saved","rb"))
 
 def predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]])
-    prediction = truncate(model.predict_proba(input)[:, 1] * 100, 2)
+    prediction = model.predict_proba(input)[:, 1] * 100
+    prediction ='{:.2f}'.format(prediction)
     return float(prediction)      
 
 
