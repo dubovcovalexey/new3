@@ -89,7 +89,7 @@ def main():
         st.success('Вероятность оттока составляет {:.2f} %'.format(output))
         if output >= 50:
             st.markdown(churn_html, unsafe_allow_html= True)
-            st.warning('Передать клиента в СРМ-кампанию по возврату', icon=None)
+            st.warning('Передать клиента в СРМ-кампанию по возврату', icon='🚨')
 
         else:
             st.markdown(no_churn_html, unsafe_allow_html= True)
