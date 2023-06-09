@@ -39,10 +39,9 @@ model=pickle.load(open("model_saved","rb"))
 
 def predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]])
-    prediction = model.predict_proba(input)[:, 1] * 100
+    prediction = round(model.predict_proba(input)[:, 1] * 100, 2)
     return float(prediction)      
-    #pred = '{0:.{1}f}'.format(prediction[:, 1] * 100)
-  #return float(pred)
+
 
 
 def main():
@@ -88,7 +87,7 @@ def main():
         output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
         st.success('Вероятность оттока составляет {}'.format(output))
 
-        if output >= 0.5:
+        if output >= 50:
             st.markdown(churn_html, unsafe_allow_html= True)
 
         else:
