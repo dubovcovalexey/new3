@@ -1,6 +1,5 @@
 import sklearn
 
-#from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
 import streamlit as st
@@ -42,9 +41,13 @@ model=pickle.load(open("model_saved","rb"))
 
 def predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]])
-    prediction = model.predict_proba(input)
-    pred = '{0:.{1}f}'.format(prediction[0][0], 2)
-    return float(pred)
+    prediction = model.predict_proba(input)[:, 1] * 100
+    return float(prediction)
+  
+
+    #prediction = model.predict_proba(input)
+    #pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+    #return float(pred)
 
 
 def main():
@@ -65,7 +68,7 @@ def main():
 
     CreditScore = st.slider('Скоринговый балл', 0, 400)
     Geography = st.selectbox('География/регион', ['Минск', 'Брест', 'Могилев'])
-    #Gender = st.selectbox('Пол', 1, 0)
+    Gender = st.selectbox('Пол', 1, 0)
     Age = st.slider("Возраст", 10, 100)
     Tenure = st.selectbox("Стаж",
                           ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'])
