@@ -84,7 +84,7 @@ def main():
             """
 
     if st.button('Сделать прогноз'):
-        output = predict_churn(CreditScore, Geo, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
+        output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
         st.success('Вероятность оттока составляет {}'.format(output))
         st.balloons()
 
