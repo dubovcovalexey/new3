@@ -89,7 +89,8 @@ def main():
         st.success('Вероятность оттока составляет {:.2f} %'.format(output))
         if output >= 50:
             st.markdown(churn_html, unsafe_allow_html= True)
-            st.info('This is a purely informational message', icon="ℹ️")
+            st.warning('body', *, icon=None)
+
 
         else:
             st.markdown(no_churn_html, unsafe_allow_html= True)
