@@ -89,7 +89,7 @@ def main():
         st.success('Вероятность оттока составляет {:.2f} %'.format(output))
         if output >= 50:
             st.markdown(churn_html, unsafe_allow_html= True)
-            st.warning('body', icon=None)
+            st.warning('body', None)
 
 
         else:
