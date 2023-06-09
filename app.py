@@ -85,8 +85,8 @@ def main():
 
     if st.button('Сделать прогноз'):
         output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-        st.success('Вероятность оттока составляет {}'.format(output))
-
+      #  st.success('Вероятность оттока составляет {}'.format(output))
+         st.success('Вероятность оттока составляет {} %'.format(output))
         if output >= 50:
             st.markdown(churn_html, unsafe_allow_html= True)
 
