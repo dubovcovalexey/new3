@@ -65,7 +65,7 @@ def main():
 
     CreditScore = st.slider('Скоринговый балл', 0, 400)
     Geography = st.selectbox('География/регион', ['Минск', 'Брест', 'Могилев'])
-    Gender = st.selectbox('Пол', 1, 0)
+    #Gender = st.selectbox('Пол', 1, 0)
     Age = st.slider("Возраст", 10, 100)
     Tenure = st.selectbox("Стаж",
                           ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'])
