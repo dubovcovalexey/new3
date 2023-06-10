@@ -72,8 +72,20 @@ def main():
     Balance = st.number_input('Баланс', min_value=0.00)
     #st.slider("Баланс", 0.00, 10000.00)
     NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
-    HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
-    IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
+    if Gen == 'Женский':
+        Gender = 0
+    else:
+        Gender = 1
+    HasCr = st.selectbox("Есть кредитная БПК ?", ['Нет', 'Есть'])
+    if HasCr == 'Нет':
+        HasCrCard = 0
+    else:
+        HasCrCard = 1
+    IsActive = st.selectbox("Активный клиент ?", ['Нет', 'Да'])
+    if IsActive == 'Нет':
+        IsActiveMember = 0
+    else:
+        HasCIsActiveMemberrCard = 1
     EstimatedSalary = st.number_input('Зарплата', min_value=0.00)
     #= st.slider("Зарплата", 0.00, 10000.00)
 
