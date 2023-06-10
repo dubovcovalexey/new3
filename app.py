@@ -71,11 +71,11 @@ def main():
     Tenure = st.number_input('Длительность обслуживания в банке:', min_value=1, max_value=35, step = 1)
     Balance = st.number_input('Баланс', min_value=0.00)
     #st.slider("Баланс", 0.00, 10000.00)
-    NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
-    if Gen == 'Женский':
-        Gender = 0
+    Num = st.selectbox('Количество продуктов', ['Один', 'Два и более'])
+    if Num == 'Один':
+        NumOfProducts = 1
     else:
-        Gender = 1
+        NumOfProducts = 2
     HasCr = st.selectbox("Есть кредитная БПК ?", ['Нет', 'Есть'])
     if HasCr == 'Нет':
         HasCrCard = 0
