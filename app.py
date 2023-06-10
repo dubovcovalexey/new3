@@ -68,8 +68,7 @@ def main():
 
     Age = st.number_input('Возраст', min_value=18, max_value=100, step=1)
     #st.slider("Возраст", 10, 100)
-    Ten = st.number_input('Длительность обслуживания в банке:', min_value=0, max_value=35, step = 1)
-    Tenure = Ten
+    Tenure = st.number_input('Длительность обслуживания в банке:', min_value=1, max_value=35, step = 1)
     Balance = st.number_input('Баланс', min_value=0.00)
     #st.slider("Баланс", 0.00, 10000.00)
     NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
