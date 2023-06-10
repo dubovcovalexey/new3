@@ -53,11 +53,7 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
-    x = 0.00
-    y = 1.00
-
-
-
+   
     st.sidebar.subheader("Итоговая работа в рамках курса Diving into Darkness of Data Science")
     st.sidebar.text("Разработчик - Дубовцов А.А.")
 
@@ -69,7 +65,7 @@ def main():
     Tenure = st.number_input('Длительность обслуживания в банке:')
     Balance = st.number_input('Баланс')
     #st.slider("Баланс", 0.00, 10000.00)
-    NumOfProducts = st.selectbox('Количество продуктов', [x, y])
+    NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
     HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
     IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
     EstimatedSalary = st.number_input('Зарплата')
