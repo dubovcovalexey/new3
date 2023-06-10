@@ -65,14 +65,13 @@ def main():
     Gender = st.selectbox('Пол',  ['1', '2'])
     Age = st.number_input('Возраст', min_value=18, max_value=100, step=1)
     #st.slider("Возраст", 10, 100)
-    Tenure = st.selectbox("Стаж",
-                          ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'])
-    Balance = st.number_input('Баланс', step=100)
+    Tenure = st.number_input('Длительность обслуживания в банке:', min_value=0, max_value=35, step=1)
+    Balance = st.number_input('Баланс')
     #st.slider("Баланс", 0.00, 10000.00)
     NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
     HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
     IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
-    EstimatedSalary = st.number_input('Зарплата', step=100)
+    EstimatedSalary = st.number_input('Зарплата')
     #= st.slider("Зарплата", 0.00, 10000.00)
 
     churn_html = """  
