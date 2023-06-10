@@ -69,7 +69,7 @@ def main():
     Tenure = st.number_input('Длительность обслуживания в банке:')
     Balance = st.number_input('Баланс')
     #st.slider("Баланс", 0.00, 10000.00)
-    NumOfProducts = st.selectbox('Количество продуктов', ['x', 'y'])
+    NumOfProducts = st.selectbox('Количество продуктов', [x, y])
     HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
     IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
     EstimatedSalary = st.number_input('Зарплата')
