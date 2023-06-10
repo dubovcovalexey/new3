@@ -63,16 +63,16 @@ def main():
     CreditScore = st.slider('Скоринговый балл', 0, 400)
     Geography = st.selectbox('География/регион', ['Минск', 'Брест', 'Могилев'])
     Gender = st.selectbox('Пол',  ['1', '2'])
-    Age = st.number_input('Возраст', min_value=18, max_value=100, value = 0, step=1)
+    Age = st.number_input('Возраст', min_value=18, max_value=100,  step=1)
     #st.slider("Возраст", 10, 100)
     Tenure = st.selectbox("Стаж",
                           ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'])
-    Balance = st.number_input('Баланс')
+    Balance = st.number_input('Баланс', step=100)
     #st.slider("Баланс", 0.00, 10000.00)
     NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
     HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
     IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
-    EstimatedSalary = st.number_input('Зарплата')
+    EstimatedSalary = st.number_input('Зарплата', step=100)
     #= st.slider("Зарплата", 0.00, 10000.00)
 
     churn_html = """  
