@@ -53,8 +53,8 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
-x = 0
-y = 1
+    x = 0
+    y = 1
 
 
 
