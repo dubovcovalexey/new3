@@ -63,12 +63,12 @@ def main():
     Age = st.number_input('Возраст', min_value=18, max_value=100, step=1)
     #st.slider("Возраст", 10, 100)
     Tenure = st.number_input('Длительность обслуживания в банке:', min_value=18)
-    Balance = st.number_input('Баланс', min_value=0)
+    Balance = st.number_input('Баланс', min_value=0.00)
     #st.slider("Баланс", 0.00, 10000.00)
     NumOfProducts = st.selectbox('Количество продуктов', ['1', '2'])
     HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
     IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
-    EstimatedSalary = st.number_input('Зарплата', min_value=0)
+    EstimatedSalary = st.number_input('Зарплата', min_value=0.00)
     #= st.slider("Зарплата", 0.00, 10000.00)
 
     churn_html = """  
