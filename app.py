@@ -101,7 +101,7 @@ def main():
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
-               <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента. <br>Добавить клиента в СРМ кампанию: потенциально потерянные клиенты.</h2>
+               <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента. <br>Добавить клиента в CRM кампанию: потенциально потерянные клиенты.</h2>
                </div>
             """
     
@@ -113,7 +113,7 @@ def main():
     
     mb_churn_html = """  
               <div style="background-color:#8dc9f7;padding:20px >
-              <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка. <br>Добавить клиента в СРМ кампанию: удержание клиентов.</h2>
+              <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка. <br>Добавить клиента в CRM кампанию: удержание клиентов.</h2>
               </div>
             """
 
@@ -121,7 +121,7 @@ def main():
     if st.button('Сделать прогноз'):
     
         if Balance < 300 and EstimatedSalary < 300 and IsActiveMember == 0 and NumOfProducts == 1:
-            st.success('Вероятность оттока составляет более 90%.'.format(output))
+            st.success('Вероятность оттока составляет более 90%.')
             st.markdown(churn_html, unsafe_allow_html= True)
 
 
