@@ -47,8 +47,8 @@ def predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfPro
 def main():
     st.title("Прогноз оттока клиентов")
     html_temp = """
-    <div style="background-color:white ;padding:100px">
-    <h2 style="color:black;text-align:center;">Заполни форму</h2>
+    <div style="background-color:white ;padding:5px">
+    <b><h2 style="color:black;text-align:center;">Заполни форму</h2></b>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
