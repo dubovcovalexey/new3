@@ -24,7 +24,7 @@ def set_png_as_page_bg(png_file):
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
-set_png_as_page_bg('6.JPG')
+set_png_as_page_bg('6.jpg')
 
 
 classifier_name=['Сatboost']
