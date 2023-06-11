@@ -97,8 +97,7 @@ def main():
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
-               <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента.</h2>
-               <h2 style="color:red;text-align:center;"> Добавить клиента в СРМ кампанию: потенциально потерянные клиенты.</h2>
+               <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента. Добавить клиента в СРМ кампанию: потенциально потерянные клиенты.</h2>
                </div>
             """
     
@@ -110,8 +109,7 @@ def main():
     
     mb_churn_html = """  
               <div style="background-color:#b6f2f2;padding:20px >
-              <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка.</h2>
-              <h2 style="color:blue ;text-align:center;"> Добавить клиента в СРМ кампанию: удержание клиентов.</h2>
+              <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка. Добавить клиента в СРМ кампанию: удержание клиентов.</h2>
               </div>
             """
 
