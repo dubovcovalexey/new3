@@ -101,12 +101,14 @@ def main():
                <h2 style="color:red;text-align:center;"> Добавить клиента в СРМ кампанию: потенциально потерянные клиенты.</h2>
                </div>
             """
+    
     no_churn_html = """  
               <div style="background-color:#94be8d;padding:20px >
                <h2 style="color:green ;text-align:center;"> Клиент остаётся в банке.</h2>
                </div>
             """
-    Mb_churn_html = """  
+    
+    mb_churn_html = """  
               <div style="background-color:#b6f2f2;padding:20px >
               <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка.</h2>
               <h2 style="color:blue ;text-align:center;"> Добавить клиента в СРМ кампанию: удержание клиентов.</h2>
@@ -120,7 +122,7 @@ def main():
         if output >= 85:
             st.markdown(churn_html, unsafe_allow_html= True)
         elif output >= 40:
-            st.markdown(Mb_churn_html, unsafe_allow_html= True)
+            st.markdown(mb_churn_html, unsafe_allow_html= True)
         else:
             st.markdown(no_churn_html, unsafe_allow_html= True)
             st.balloons()
