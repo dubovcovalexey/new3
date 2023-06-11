@@ -91,7 +91,7 @@ def main():
     if IsActive == 'Нет':
         IsActiveMember = 0
     else:
-        HasCIsActiveMemberrCard = 1
+        IsActiveMember = 1
     EstimatedSalary = st.number_input('Зарплата', min_value=0.00)
     #= st.slider("Зарплата", 0.00, 10000.00)
 
