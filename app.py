@@ -117,17 +117,22 @@ def main():
               </div>
             """
 
-    if st.button('Сделать прогноз'):
-        output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-      # st.success('Вероятность оттока составляет {}'.format(output))
-        st.success('Вероятность оттока составляет {:.2f} %'.format(output))
-        if output >= 85:
-            st.markdown(churn_html, unsafe_allow_html= True)
-        elif output >= 40:
-            st.markdown(mb_churn_html, unsafe_allow_html= True)
-        else:
-            st.markdown(no_churn_html, unsafe_allow_html= True)
-            st.balloons()
+    if Balance < 300 and EstimatedSalary < 300 and IsActiveMember == 0 and NumOfProducts == 1 and st.button('Сделать прогноз'):
+        st.success('Вероятность оттока составляет более 90%.'.format(output))
+        st.markdown(churn_html, unsafe_allow_html= True)
+
+    
+    else:
+        st.button('Сделать прогноз'):
+            output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
+            st.success('Вероятность оттока составляет {:.2f} %'.format(output))
+            if output >= 85:
+                st.markdown(churn_html, unsafe_allow_html= True)
+            elif output >= 40:
+                st.markdown(mb_churn_html, unsafe_allow_html= True)
+            else:
+                st.markdown(no_churn_html, unsafe_allow_html= True)
+                st.balloons()
 
 
 if __name__=='__main__':
