@@ -106,7 +106,7 @@ def main():
                <h2 style="color:green ;text-align:center;"> Клиент остаётся в банке.</h2>
                </div>
             """
-     Mb_churn_html = """  
+    Mb_churn_html = """  
               <div style="background-color:#b6f2f2;padding:20px >
               <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка.</h2>
               <h2 style="color:blue ;text-align:center;"> Добавить клиента в СРМ кампанию: удержание клиентов.</h2>
