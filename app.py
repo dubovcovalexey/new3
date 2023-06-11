@@ -70,9 +70,9 @@ def main():
     #st.slider("Возраст", 10, 100)
     Tenure = st.number_input('Длительность обслуживания в банке:', min_value=1, max_value=35, step = 1)
     Bal = st.number_input('Баланс', min_value=0.00)
-    if Bal < 1000:
-        Balance = 1000
-    elif Bal >= 1000 and Bal < 6000:
+    if Bal < 500:
+        Balance = 500
+    elif Bal >= 500 and Bal < 6000:
         Balance = Bal
     else:
         Balance = 6000
@@ -92,9 +92,9 @@ def main():
     else:
         IsActiveMember = 1
     Salary = st.number_input('Зарплата', min_value=0.00)
-    if Salary < 500:
-        EstimatedSalary = 500
-    elif Salary >= 500 and Salary < 6000:
+    if Salary < 300:
+        EstimatedSalary = 300
+    elif Salary >= 300 and Salary < 6000:
         EstimatedSalary = Salary
     else:
         EstimatedSalary = 6000
