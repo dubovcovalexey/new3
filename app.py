@@ -70,13 +70,12 @@ def main():
     #st.slider("Возраст", 10, 100)
     Tenure = st.number_input('Длительность обслуживания в банке:', min_value=1, max_value=35, step = 1)
     Bal = st.number_input('Баланс', min_value=0.00)
-    if Bal < 1000:
-        Balance = 1000
-    elif Bal >= 1000 and Bal < 6000:
+    if Bal < 100:
+        Balance = 100
+    elif Bal >= 100 and Bal < 6000:
         Balance = Bal
     else:
         Balance = 6000
-    #st.slider("Баланс", 0.00, 10000.00)
     Num = st.selectbox('Количество продуктов', ['1', '2 и более'])
     if Num == '1':
         NumOfProducts = 1
@@ -92,8 +91,13 @@ def main():
         IsActiveMember = 0
     else:
         IsActiveMember = 1
-    EstimatedSalary = st.number_input('Зарплата', min_value=0.00)
-    #= st.slider("Зарплата", 0.00, 10000.00)
+    Salary = st.number_input('Зарплата', min_value=0.00)
+    if Salary < 100:
+        EstimatedSalary = 100
+    elif Salary >= 100 and Salary < 6000:
+        EstimatedSalary = Salary
+    else:
+        EstimatedSalary = 6000
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
