@@ -69,14 +69,20 @@ def main():
     Age = st.number_input('Возраст', min_value=18, max_value=100, step=1)
     #st.slider("Возраст", 10, 100)
     Tenure = st.number_input('Длительность обслуживания в банке:', min_value=1, max_value=35, step = 1)
-    Balance = st.number_input('Баланс', min_value=0.00)
+    Bal = st.number_input('Баланс', min_value=0.00)
+    if Bal < 1000:
+        Balance = 1000
+    elif Bal >= 1000 and Bal < 6000:
+        Balance = Bal
+    else:
+        Balance = 6000
     #st.slider("Баланс", 0.00, 10000.00)
-    Num = st.selectbox('Количество продуктов', ['Один', 'Два и более'])
-    if Num == 'Один':
+    Num = st.selectbox('Количество продуктов', ['1', '2 и более'])
+    if Num == '1':
         NumOfProducts = 1
     else:
         NumOfProducts = 2
-    HasCr = st.selectbox("Есть кредитная БПК ?", ['Нет', 'Есть'])
+    HasCr = st.selectbox("Есть кредитная БПК ?", ['Нет', 'Да'])
     if HasCr == 'Нет':
         HasCrCard = 0
     else:
