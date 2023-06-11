@@ -98,22 +98,29 @@ def main():
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
                <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента.</h2>
+               <h2 style="color:red;text-align:center;"> Добавить клиента в СРМ кампанию: потенциально потерянные клиенты.</h2>
                </div>
             """
     no_churn_html = """  
               <div style="background-color:#94be8d;padding:20px >
-               <h2 style="color:green ;text-align:center;"> Ура, клиент остаётся в банке !!!</h2>
+               <h2 style="color:green ;text-align:center;"> Клиент остаётся в банке.</h2>
                </div>
+            """
+     Mb_churn_html = """  
+              <div style="background-color:#b6f2f2;padding:20px >
+              <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка.</h2>
+              <h2 style="color:blue ;text-align:center;"> Добавить клиента в СРМ кампанию: удержание клиентов.</h2>
+              </div>
             """
 
     if st.button('Сделать прогноз'):
         output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
       # st.success('Вероятность оттока составляет {}'.format(output))
         st.success('Вероятность оттока составляет {:.2f} %'.format(output))
-        if output >= 50:
+        if output >= 85:
             st.markdown(churn_html, unsafe_allow_html= True)
-
-
+        elif output >= 40:
+            st.markdown(Mb_churn_html, unsafe_allow_html= True)
         else:
             st.markdown(no_churn_html, unsafe_allow_html= True)
             st.balloons()
