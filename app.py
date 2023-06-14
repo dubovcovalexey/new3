@@ -124,7 +124,7 @@ def main():
             st.error('Некорректный возраст клиента или длительность обслуживания в банке')
             
         
-        elif Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1 and output < 40:
+        elif Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1 and output > 40:
             st.success('Вероятность оттока составляет более 90%.')
             st.markdown(churn_html, unsafe_allow_html= True)
 
