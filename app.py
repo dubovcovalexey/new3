@@ -128,7 +128,10 @@ def main():
             st.success('Вероятность оттока составляет более 90%.')
             st.markdown(churn_html, unsafe_allow_html= True)
 
-
+        elif Balance > 2000 and EstimatedSalary > 2000 and CreditScore > 250:
+            st.success('Вероятность оттока составляет менее 40 %.')
+            st.markdown(no_churn_html, unsafe_allow_html= True)
+                
         else:
             output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
             st.success('Вероятность оттока составляет {:.2f} %'.format(output))
