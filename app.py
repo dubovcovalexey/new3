@@ -15,11 +15,11 @@ def set_png_as_page_bg(png_file):
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = '''
     <style>
-    body {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
-    </style>
+    .stApp {
+     background-image: url("data:image/png;base64,%s");
+     background-size: cover;
+     }
+     </style>
     ''' % bin_str
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -101,7 +101,7 @@ def main():
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
-               <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента. <br>Добавить клиента в CRM кампанию: потенциально потерянные клиенты.</h2>
+               <h2 style="color:red;text-align:center;"> Клиент уходит. <br>Добавить клиента в CRM кампанию: потенциально потерянные клиенты.</h2>
                </div>
             """
     
@@ -112,7 +112,7 @@ def main():
             """
     
     mb_churn_html = """  
-              <div style="background-color:#8dc9f7;padding:20px >
+              <div style="background-color:#c9c7c7;padding:20px >
               <h2 style="color:blue ;text-align:center;"> Клиент может уйти из банка. <br>Добавить клиента в CRM кампанию: удержание клиентов.</h2>
               </div>
             """
