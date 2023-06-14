@@ -66,7 +66,7 @@ def main():
     else:
         Gender = 1
 
-    Age = st.number_input('Возраст', min_value=18 + Tenure, max_value=100, step=1)
+    Age = st.number_input('Возраст', min_value=18, max_value=100, step=1)
     #st.slider("Возраст", 10, 100)
     Tenure = st.number_input('Длительность обслуживания в банке:', min_value=1, max_value=35, step = 1)
     Bal = st.number_input('Баланс', min_value=0.00)
