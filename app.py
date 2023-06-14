@@ -120,7 +120,7 @@ def main():
     
     if st.button('Сделать прогноз'):
     
-        if Age - Tenure < 1:
+        if Age - Tenure < 17:
             st.error('This is an error')
         
         if Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
