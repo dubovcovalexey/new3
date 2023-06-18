@@ -124,24 +124,24 @@ def main():
     else:
         st.button('Сделать прогноз')
               
-            if Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
-                st.success('Вероятность оттока составляет более 90%.')
-                st.markdown(churn_html, unsafe_allow_html= True)
+    if Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
+        st.success('Вероятность оттока составляет более 90%.')
+        st.markdown(churn_html, unsafe_allow_html= True)
 
-            elif Balance > 2000 and EstimatedSalary > 2000 and CreditScore > 250 and predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)  > 40:
-                st.success('Вероятность оттока составляет менее 40 %.')
-                st.markdown(no_churn_html, unsafe_allow_html= True)
+    elif Balance > 2000 and EstimatedSalary > 2000 and CreditScore > 250 and predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)  > 40:
+        st.success('Вероятность оттока составляет менее 40 %.')
+        st.markdown(no_churn_html, unsafe_allow_html= True)
                 
-            else:
-                output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-                st.success('Вероятность оттока составляет {:.2f} %'.format(output))
-                if output >= 85:
-                    st.markdown(churn_html, unsafe_allow_html= True)
-                elif output >= 40:
-                    st.markdown(mb_churn_html, unsafe_allow_html= True)
-                else:
-                    st.markdown(no_churn_html, unsafe_allow_html= True)
-                    st.balloons()
+    else:
+        output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
+        st.success('Вероятность оттока составляет {:.2f} %'.format(output))
+        if output >= 85:
+                st.markdown(churn_html, unsafe_allow_html= True)
+        elif output >= 40:
+            st.markdown(mb_churn_html, unsafe_allow_html= True)
+        else:
+            st.markdown(no_churn_html, unsafe_allow_html= True)
+            st.balloons()
 
 
 if __name__=='__main__':
