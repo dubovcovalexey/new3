@@ -122,7 +122,7 @@ def main():
         st.error('Некорректный возраст клиента или длительность обслуживания в банке')
     
     else:
-        st.button('Сделать прогноз'):
+        st.button('Сделать прогноз')
               
             if Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
                 st.success('Вероятность оттока составляет более 90%.')
