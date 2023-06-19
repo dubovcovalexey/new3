@@ -53,7 +53,7 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
-    st.sidebar.image('cat.jpg')
+    st.sidebar.image('cat.jpg', width=100)
     st.sidebar.subheader("Итоговая работа в рамках курса Diving into Darkness of Data Science")
     st.sidebar.text("Разработчик - Дубовцов А.А.")
 
